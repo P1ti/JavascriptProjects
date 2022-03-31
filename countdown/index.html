@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Acasa</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body onload="timeDisplay()">
+
+    <div class="clockView">
+      <p class="message">Now <span style="color: red">is...</span></p>
+      <ul class="uClockL">
+        <li>
+          <p class="title">Hour</p>
+          <p class="hour">00</p>
+        </li>
+        <li>
+          <span style="color: red">Minute</span>
+          <p class="minute">00</p>
+        </li>
+        <li>
+          <p class="title">Second</p>
+          <p class="second">00</p>
+        </li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+      function timeDisplay() {
+        let timeN = new Date();
+        let hours = timeN.getHours();
+        let minutes = timeN.getMinutes();
+        let seconds = timeN.getSeconds();
+
+        document.querySelector('.hour').innerHTML = hours;
+        document.querySelector('.minute').innerHTML = minutes;
+        document.querySelector('.second').innerHTML = seconds;
+      }
+
+      setInterval(timeDisplay, 1000);
+    </script>
+  </body>
+</html>
